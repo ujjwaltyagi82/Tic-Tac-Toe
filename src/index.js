@@ -11,10 +11,24 @@ function App() {
 
             <Board> </Board>
 
+           <Decoration />
         </div>
+
     )
 }
 
+function Decoration(){
+
+    return (
+    <div className='text'>
+  <h1>Make a Right Move 😎</h1>
+  
+
+    </div>
+
+
+    )
+}
 
 function Board() {
 

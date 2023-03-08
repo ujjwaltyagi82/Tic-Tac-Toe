@@ -1,7 +1,7 @@
 .Block{
     width: 150px;
     height: 150px;
-    border: 2px solid white;
+    border: 2px solid black;
     background-size: cover;
     display: inline-block;
   }
@@ -14,7 +14,12 @@ background-image: url('images/dot.jpg');
     background-image: url('images/cross.png');
 }
 
-.Game{
-background-image: url('images/space.avif');
 
+.Game{
+text-align: center;
+
+}
+
+.text{
+  color: brown;
 }
