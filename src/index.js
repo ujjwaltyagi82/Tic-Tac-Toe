@@ -1,17 +1,95 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, {  useState } from 'react';
+import { render } from 'react-dom';
+import './App.css'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function App() {
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    return (
+        <div className='Game'>
+
+        <div><h1>𝕿𝖎𝖈 𝕿𝖆𝖈 𝕿𝖔𝖊 🎮</h1></div>
+
+            <Board> </Board>
+
+        </div>
+    )
+}
+
+
+function Board() {
+
+    const [count, setcount] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    const [player, setplayer] = useState(1);
+
+//     useEffect(()=> {
+//     const combination = [
+//     [0,1,2],
+//     [3,4,5],
+//     [6,7,8],
+//     [0,3,6],
+//     [1,4,7],
+//     [2,5,8],
+//     [0,4,8],
+//     [2,4,6]
+    
+//     ]
+
+// for(let c of combination){
+//     if(count[c[0]] === 1)
+
+// }
+
+
+//     }, [count])
+
+
+    const change = (i) => {
+        const a = [...count]
+        if (a[i] === 0) {
+            a[i] = player;
+            setcount(a)
+            setplayer(player === 1 ? 2 : 1);
+        } else {
+            alert("Tap Only Empty Block")
+        }
+
+    }
+
+    return (
+        <div className="Board">
+
+            <div>
+                <Block mark={count[0]} number={0} change={change}> </Block>
+                <Block mark={count[1]} number={1} change={change}> </Block>
+                <Block mark={count[2]} number={2} change={change}> </Block>
+            </div>
+
+            <div>
+                <Block mark={count[3]} number={3} change={change}> </Block>
+                <Block mark={count[4]} number={4} change={change}> </Block>
+                <Block mark={count[5]} number={5} change={change}> </Block>
+            </div>
+
+            <div>
+                <Block mark={count[6]} number={6} change={change}> </Block>
+                <Block mark={count[7]} number={7} change={change}> </Block>
+                <Block mark={count[8]} number={8} change={change}> </Block>
+            </div>
+
+        </div>
+    )
+
+}
+
+
+function Block({ mark, change, number }) {
+    return (
+        <div className={`Block count${mark}`} onClick={e => change(number)}>
+
+
+        </div>
+    )
+}
+
+
+render(<App />, document.getElementById('root'));
