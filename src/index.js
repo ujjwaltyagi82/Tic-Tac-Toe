@@ -7,7 +7,7 @@ function App() {
     return (
         <div className='Game'>
 
-        <div style={{color:'red'}}><h1>𝕿𝖎𝖈 𝕿𝖆𝖈 𝕿𝖔𝖊 🎮</h1></div>
+        <div style={{color:'red'}}><h1>emoji 𝕿𝖎𝖈 𝕿𝖆𝖈 𝕿𝖔𝖊 🎮</h1></div>
 
             <Board> </Board>
 
