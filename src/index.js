@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, {  useEffect,useState } from 'react';
 import { render } from 'react-dom';
 import './App.css'
 
@@ -7,7 +7,7 @@ function App() {
     return (
         <div className='Game'>
 
-        <div><h1>𝕿𝖎𝖈 𝕿𝖆𝖈 𝕿𝖔𝖊 🎮</h1></div>
+        <div style={{color:'red'}}><h1>𝕿𝖎𝖈 𝕿𝖆𝖈 𝕿𝖔𝖊 🎮</h1></div>
 
             <Board> </Board>
 
@@ -21,26 +21,28 @@ function Board() {
     const [count, setcount] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
     const [player, setplayer] = useState(1);
 
-//     useEffect(()=> {
-//     const combination = [
-//     [0,1,2],
-//     [3,4,5],
-//     [6,7,8],
-//     [0,3,6],
-//     [1,4,7],
-//     [2,5,8],
-//     [0,4,8],
-//     [2,4,6]
-    
-//     ]
+    useEffect(()=> {
+    const combination = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+    ]
 
-// for(let c of combination){
-//     if(count[c[0]] === 1)
+for(let c of combination){
+    if(count[c[0]] === 1 && count[c[1]] === 1 && count[c[2]] === 1){
+         alert("Player 1 win")
+}
+    if(count[c[0]] === 2 && count[c[1]] === 2 && count[c[2]] === 2){
+    alert("Player 2 win")
+}
 
-// }
-
-
-//     }, [count])
+}
+}, [count])
 
 
     const change = (i) => {
