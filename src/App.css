@@ -1,17 +1,17 @@
 .Block{
     width: 150px;
     height: 150px;
-    border: 2px solid black;
+    border: 3.5px solid black;
     background-size: cover;
     display: inline-block;
   }
 
-.count1{
+.count2{
 background-image: url('images/dot.jpg');
 }
 
-.count2{
-    background-image: url('images/cross.png');
+.count1{
+    background-image: url('images/cross.jpg');
 }
 
 
